@@ -33,7 +33,7 @@ namespace SelectionSort_C_
 
             // Once we know the largest we will then swap the largest element
             // with the last element in the unsorted partition
-            // Grown sorted by 1, so we subtract unsorted by 1 of the last index. 
+            // Grow sorted by 1, and then subtract unsorted by 1 of the last index. 
 
             // swap(intArray, largest, lastUnsortedIndex);
 

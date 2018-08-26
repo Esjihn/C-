@@ -11,4 +11,5 @@
 	<local:HistoryPage Title="History"/>
 	<local:MapPage Title="Map"/>
 	<local:ProfilePage Title="Profile"/>
+	
 </TabbedPage>
