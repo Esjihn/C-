@@ -1,8 +1,7 @@
-﻿/// <summary>
-/// Syntax from Microsoft™ 
-/// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq
-/// Modified 8/27/2018
-/// </summary>
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace VRSA
 {
 
@@ -12,7 +11,9 @@ namespace VRSA
         private string _pathA = @"C:\Compare1";
         private string _pathB = @"C:\Compare2";
 
-        public FileCheck() { }
+        public FileCheck()
+        {
+        }
 
         public FileCheck(string pathA, string pathB)
         {
@@ -49,10 +50,11 @@ namespace VRSA
 
             var queryCommonFiles = list1.Intersect(list2, myFileCompare);
 
-            if (queryCommonFiles.Count() > 0)
+            var commonFiles = queryCommonFiles.ToList();
+            if (commonFiles.Any())
             {
                 Console.WriteLine("The following files are in both folders:");
-                foreach (var v in queryCommonFiles)
+                foreach (var v in commonFiles)
                 {
                     Console.WriteLine(v.FullName); //shows which items end up in result list  
                 }
@@ -65,7 +67,7 @@ namespace VRSA
             // Find the set difference between the two folders.  
             // For this example we only check one way.  
             var queryList1Only = (from file in list1
-                                  select file).Except(list2, myFileCompare);
+                select file).Except(list2, myFileCompare);
 
             Console.WriteLine("The following files are in list1 but not list2:");
             foreach (var v in queryList1Only)
@@ -83,12 +85,14 @@ namespace VRSA
         // of the files being compared and their length in bytes.  
         class FileCompare : System.Collections.Generic.IEqualityComparer<System.IO.FileInfo>
         {
-            public FileCompare() { }
+            public FileCompare()
+            {
+            }
 
             public bool Equals(System.IO.FileInfo f1, System.IO.FileInfo f2)
             {
-                return (f1.Name == f2.Name &&
-                        f1.Length == f2.Length);
+                return f2 != null && (f1 != null && (f1.Name == f2.Name &&
+                                                     f1.Length == f2.Length));
             }
 
             // Return a hash that reflects the comparison criteria. According to the   
@@ -102,4 +106,7 @@ namespace VRSA
                 return s.GetHashCode();
             }
         }
+    }
+}
+
 
