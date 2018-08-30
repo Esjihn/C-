@@ -11,9 +11,7 @@ namespace VRSA
         private string _pathA = @"C:\Compare1";
         private string _pathB = @"C:\Compare2";
 
-        public FileCheck()
-        {
-        }
+        public FileCheck() {}
 
         public FileCheck(string pathA, string pathB)
         {
@@ -58,6 +56,7 @@ namespace VRSA
                 {
                     Console.WriteLine(v.FullName); //shows which items end up in result list  
                 }
+
             }
             else
             {
@@ -85,9 +84,6 @@ namespace VRSA
         // of the files being compared and their length in bytes.  
         class FileCompare : System.Collections.Generic.IEqualityComparer<System.IO.FileInfo>
         {
-            public FileCompare()
-            {
-            }
 
             public bool Equals(System.IO.FileInfo f1, System.IO.FileInfo f2)
             {
