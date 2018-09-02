@@ -18,6 +18,7 @@ namespace VRSA
             FileCheck fileCheck = new FileCheck();
             fileCheck.CompareTwoFolders();
         }
+
     }
 }
 
