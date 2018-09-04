@@ -52,7 +52,6 @@
             this.headerLabel.Size = new System.Drawing.Size(209, 50);
             this.headerLabel.TabIndex = 12;
             this.headerLabel.Text = "Create Prize";
-            
             // 
             // placeNumberValue
             // 
@@ -77,7 +76,8 @@
             this.prizePercentageValue.Location = new System.Drawing.Point(277, 353);
             this.prizePercentageValue.Name = "prizePercentageValue";
             this.prizePercentageValue.Size = new System.Drawing.Size(192, 35);
-            this.prizePercentageValue.TabIndex = 16;
+            this.prizePercentageValue.TabIndex = 17;
+            this.prizePercentageValue.Text = "0";
             // 
             // prizePercentageLabel
             // 
@@ -95,7 +95,8 @@
             this.prizeAmountValue.Location = new System.Drawing.Point(277, 218);
             this.prizeAmountValue.Name = "prizeAmountValue";
             this.prizeAmountValue.Size = new System.Drawing.Size(192, 35);
-            this.prizeAmountValue.TabIndex = 18;
+            this.prizeAmountValue.TabIndex = 16;
+            this.prizeAmountValue.Text = "0";
             // 
             // prizeAmountLabel
             // 
@@ -113,7 +114,7 @@
             this.placeNameValue.Location = new System.Drawing.Point(277, 160);
             this.placeNameValue.Name = "placeNameValue";
             this.placeNameValue.Size = new System.Drawing.Size(192, 35);
-            this.placeNameValue.TabIndex = 20;
+            this.placeNameValue.TabIndex = 15;
             // 
             // placeNameLabel
             // 
@@ -155,6 +156,7 @@
             // 
             // CreatePrizeForm
             // 
+            this.AcceptButton = this.createPrizeButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -174,7 +176,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "CreatePrizeForm";
-            this.Text = "CreatePrize";
+            this.Text = "15";
             this.Load += new System.EventHandler(this.CreatePrizeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
