@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,14 @@ namespace TrackerLibrary.DataAccess
         // Saves a new prize to the database
         public PrizeModel CreatePrize(PrizeModel model)
         {
-            model.Id = 1;
+            // Closes SQL connection down properly after end of curly braces.
+            using (IDbConnection connection =
+                new System.Data.SqlClient.SqlConnection(GlobalConfig.ConString("Tournaments")))
+            {
 
-            return model;
+
+
+            }
         }
 
     }
