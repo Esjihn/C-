@@ -1,0 +1,15 @@
+﻿<Window x:Class="WeatherConsole.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherConsole"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400"
+        Background="Bisque" BorderThickness="1">
+	<Grid>
+		<Button Content="Button" HorizontalAlignment="Left" Margin="151,281,151,0" VerticalAlignment="Top" Width="75"/>
+		<TextBox HorizontalAlignment="Left" Height="30"  Margin="72,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="199"/>
+
+	</Grid>
+</Window>
