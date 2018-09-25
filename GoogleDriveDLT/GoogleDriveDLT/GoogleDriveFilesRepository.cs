@@ -85,6 +85,7 @@ namespace GoogleDriveDLT
                 DriveService service = GetService();
 
                 string path = Path.Combine(HttpContext.Current.Server.MapPath("~/GoogleDriveFiles"),
+                
                 Path.GetFileName(file.FileName));
                 file.SaveAs(path);
 
@@ -94,7 +95,7 @@ namespace GoogleDriveDLT
 
                 FilesResource.CreateMediaUpload request;
 
-                using (var stream = new System.IO.FileStream(path, System.IO.FileMode.Open))
+                using (var stream = new FileStream(path, FileMode.Open))
                 {
                     request = service.Files.Create(FileMetaData, stream, FileMetaData.MimeType);
                     request.Fields = "id";
@@ -114,7 +115,7 @@ namespace GoogleDriveDLT
             FilesResource.GetRequest request = service.Files.Get(fileId);
 
             string FileName = request.Execute().Name;
-            string FilePath = System.IO.Path.Combine(FolderPath2, FileName);
+            string FilePath = Path.Combine(FolderPath2, FileName);
 
             MemoryStream stream1 = new MemoryStream();
 

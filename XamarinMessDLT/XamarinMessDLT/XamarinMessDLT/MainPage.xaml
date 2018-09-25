@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="XamarinMessDLT.MainPage">
+	<StackLayout Orientation="Vertical" BackgroundColor="DeepSkyBlue">
+		<Label Text="XamarinMessDL Test" 
+        TextColor="Navy"  
+        FontSize="40"/>
+		<Label Text="Messaging Application"  
+           BackgroundColor="Azure"  
+           TextColor="CadetBlue"  
+               FontSize="28"/>
+
+		<Button Text="Send SMS"  
+            FontSize="25"  
+            Clicked="OnSMSButtonClicked"/>
+		<Button Text="Phone Dial"  
+            Clicked="OnPhoneButtonClicked"  
+            FontSize="25"/>
+		<Button Text="Send Email"  
+            Clicked="OnEmailButtonClicked"  
+            FontSize="25"/>
+	</StackLayout>
+</ContentPage> 

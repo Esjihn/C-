@@ -1,0 +1,37 @@
+In creating the index there are several things we need toa dd to the page. 
+
+IndexModel (ContentModel)
+
+string Id
+string ContentText
+string Description
+string contact information
+string program version number
+
+ItemModel
+
+string id
+string text
+string description
+
+TimerModel
+
+string Id
+DateTime dt
+string TimersText
+
+GeoLocationModel
+
+string Id
+DateTime dt
+string GeoLocation
+string PopulateGeoFromCalData
+Type or Geo API?
+
+CalendarModel
+
+string Id
+System.Globalization.Calendar? Research on how to implement on the model side
+string location
+string description
+string sync
