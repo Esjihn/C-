@@ -7,15 +7,15 @@ namespace HackerRank
     {
         public int power(int n, int p)
         {
-
-
-            return n, p;
+            if (n < 0 || p < 0)
+                throw new Exception("n and p should be non-negative");
+            return Convert.ToInt32(Math.Pow(n, p));
         }
-
-
     }
     class Solution
     {
+
+
          static void Main(String[] args)
         {
             Calculator myCalculator = new Calculator();
@@ -33,13 +33,8 @@ namespace HackerRank
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
-
                 }
             }
-
-
-
         }
     }
-
 }
