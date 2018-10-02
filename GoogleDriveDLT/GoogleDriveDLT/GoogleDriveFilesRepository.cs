@@ -111,6 +111,7 @@ namespace GoogleDriveDLT
 
             // TODO FolderPath2 modified path downloaded File into MyDocuments
             string FolderPath2 = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string FolderPath3 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string FolderPath = Path.GetExtension("/GoogleDriveFiles/");
             FilesResource.GetRequest request = service.Files.Get(fileId);
 
