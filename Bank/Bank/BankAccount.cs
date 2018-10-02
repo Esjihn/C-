@@ -8,6 +8,9 @@ namespace Bank
 {
     public class BankAccount
     {
+        public const string DebitAmountExceedsBalanceMessage = "Debit amount exceeds balance";
+        public const string DebitAmountLessThanZeroMessage = "Debit amount is less than zero";
+
         string m_customerName;
         double m_balance;
         bool m_frozen = false;
@@ -25,10 +28,13 @@ namespace Bank
             get { return m_customerName; }
         }
 
-        public double Balance
-        {
-            get { return m_balance; }
-        }
+        public double Balance => m_balance;
+
+        // Exact same as above.
+        //public double Balance
+        //{
+        //    get { return m_balance; }
+        //}
 
         public void Debit(double amount)
         {
@@ -39,12 +45,12 @@ namespace Bank
 
             if (amount > m_balance)
             {
-                throw new ArgumentOutOfRangeException("amount");
+                throw new ArgumentOutOfRangeException("amount", amount, DebitAmountExceedsBalanceMessage);
             }
 
             if (amount < 0)
             {
-                throw new ArgumentOutOfRangeException("amount");
+                throw new ArgumentOutOfRangeException("amount", amount, DebitAmountLessThanZeroMessage);
             }
 
             m_balance -= amount; // intentionally incorrect code
