@@ -10,8 +10,8 @@ namespace RomantoInteger
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine(RomanToInt("MVMMVMVMIIIICIILII"));
+            
+           RomanToInt("MCMXCIV");
         }
 
         public static int RomanToInt(string s)
@@ -41,7 +41,6 @@ namespace RomantoInteger
             }
 
             return sum;
-
         }
 
         private static IDictionary<char, int> RomanToIntegerDefault()
